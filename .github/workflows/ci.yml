@@ -44,9 +44,17 @@ jobs:
         run: npm run build
         working-directory: packages/react-frontend
 
+      - name: Build (Backend)
+        run: npm run build
+        working-directory: packages/express-backend
+
       #- name: Build
       #  run: npm run build
 
       - name: Run Tests (Frontend)
         run: npm test
         working-directory: packages/react-frontend
+
+      - name: Run Tests (Backend)
+        run: npm test
+        working-directory: packages/express-backend
