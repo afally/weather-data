@@ -16,7 +16,7 @@ describe("Get Articles Controller", () => {
     expect(response.status).toBe(200);
     expect(response.body).toHaveProperty("status", "success");
     expect(response.body).toHaveProperty("data");
-    expect(response.body.data).toHaveProperty("articleOptions");
+
     // Add more assertions here if needed
   });
 
@@ -39,6 +39,8 @@ describe("Get Articles Controller", () => {
     // Add more assertions here if needed
   });
   afterAll(async () => {
+    // Closing the server
     await server.close();
-  });
+    console.log(`Test server closed...`);
+  }, 10000); // Set the timeout to 10000 milliseconds (10 seconds)
 });

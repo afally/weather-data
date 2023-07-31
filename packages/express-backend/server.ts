@@ -6,10 +6,14 @@ import apiKeyValidation from "./utils/apiKeyValidation";
 
 import { Request, Response, NextFunction } from "express";
 import articlesRouter from "./api/routes/articles/articles.router";
+import setupSwagger from "./swagger";
 
 dotenv.config();
 
 const app = express();
+
+// Setup Swagger
+setupSwagger(app);
 
 //Authorization
 //const validAPIKey = process.env.VALID_API_KEY;

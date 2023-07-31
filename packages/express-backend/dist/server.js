@@ -9,8 +9,11 @@ const dotenv_1 = __importDefault(require("dotenv"));
 const winston_1 = __importDefault(require("winston"));
 const apiKeyValidation_1 = __importDefault(require("./utils/apiKeyValidation"));
 const articles_router_1 = __importDefault(require("./api/routes/articles/articles.router"));
+const swagger_1 = __importDefault(require("./swagger"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
+// Setup Swagger
+(0, swagger_1.default)(app);
 //Authorization
 //const validAPIKey = process.env.VALID_API_KEY;
 //console.log(validAPIKey);

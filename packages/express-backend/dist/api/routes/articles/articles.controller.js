@@ -23,9 +23,7 @@ const getArticles = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
             res.status(200).json({
                 status: "success",
                 totalResults: articles_model_1.articleOptions.length,
-                data: {
-                    articleOptions: articles_model_1.articleOptions,
-                },
+                data: articles_model_1.articleOptions,
             });
         }
     }

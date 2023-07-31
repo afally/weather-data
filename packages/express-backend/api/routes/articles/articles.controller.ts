@@ -13,9 +13,7 @@ const getArticles = async (req: Request, res: Response): Promise<void> => {
       res.status(200).json({
         status: "success",
         totalResults: articleOptions.length,
-        data: {
-          articleOptions,
-        },
+        data: articleOptions,
       });
     }
   } catch (error: any) {

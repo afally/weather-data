@@ -1,5 +1,5 @@
 {
-  "name": "@my-news-app/express-backend",
+  "name": "express-backend",
   "version": "1.0.0",
   "description": "Backend for my-news-app",
   "main": "dist/server.js",
@@ -9,7 +9,7 @@
     "start": "npm run build && node dist/server.js",
     "server": "npm run build && nodemon dist/server.js",
     "client": "npm start --prefix client",
-    "test": "jest --detectOpenHandles",
+    "test": "jest --watchAll --no-cache --detectOpenHandles",
     "dev": "concurrently \"npm run server\" \"npm run test:watch\""
   },
   "author": "Ayodele",
@@ -24,11 +24,16 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "multer": "^1.4.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0",
     "winston": "^3.9.0"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.13",
     "@types/jest": "^29.5.3",
     "@types/supertest": "^2.0.12",
+    "@types/swagger-jsdoc": "^6.0.1",
+    "@types/swagger-ui-express": "^4.1.3",
     "concurrently": "^8.2.0",
     "jest": "^29.6.2",
     "nodemon": "^2.0.7",

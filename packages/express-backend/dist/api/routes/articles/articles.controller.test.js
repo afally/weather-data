@@ -29,7 +29,6 @@ describe("Get Articles Controller", () => {
         expect(response.status).toBe(200);
         expect(response.body).toHaveProperty("status", "success");
         expect(response.body).toHaveProperty("data");
-        expect(response.body.data).toHaveProperty("articleOptions");
         // Add more assertions here if needed
     }));
     it("should return 401 if API key is missing", () => __awaiter(void 0, void 0, void 0, function* () {
@@ -49,6 +48,8 @@ describe("Get Articles Controller", () => {
         // Add more assertions here if needed
     }));
     afterAll(() => __awaiter(void 0, void 0, void 0, function* () {
+        // Closing the server
         yield server.close();
-    }));
+        console.log(`Test server closed...`);
+    }), 10000); // Set the timeout to 10000 milliseconds (10 seconds)
 });
