@@ -1,0 +1,38 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest/globals": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:jest/recommended",
+    "airbnb",
+    "prettier",
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "jest", "@typescript-eslint"],
+  "rules": {
+    "no-underscore-dangle": 0,
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "always",
+        "jsx": "always",
+        "ts": "always",
+        "tsx": "always"
+      }
+    ],
+    "@typescript-eslint/explicit-module-boundary-types": "off"
+  }
+}

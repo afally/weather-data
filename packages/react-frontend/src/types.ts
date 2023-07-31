@@ -1,8 +1,14 @@
-export interface CareLogItem {
-  id: string;
-  care_recipient_id: string;
-  type: string;
-  status: string;
-  note: string;
-  created_at: string;
+export interface ArticleType {
+  title: string;
+  author: string;
+  description: string;
+  imageUrl: string;
+  source: {
+    Id: string | null;
+    name: string;
+  };
+  publishedAt: string;
+  url: string;
 }
+
+export default ArticleType;
