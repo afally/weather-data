@@ -55,7 +55,7 @@ Step-by-step guide on how to install the project and its dependencies.
 1. Clone the repository to your local machine using Git:
 
 ```bash
-git clone https://github.com/your-username/your-project.git
+git clone https://github.com/ayofalo/my-news-app.git
 ```
 
 2. Navigate to the project directory
