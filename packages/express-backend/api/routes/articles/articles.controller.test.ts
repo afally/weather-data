@@ -13,6 +13,7 @@ describe("Get Articles Controller", () => {
   it("should return 200 and list of articles", async () => {
     const apiKey = "5aa965eb8e501bff4bde01b13de411e5"; // Replace with your valid API key
     const response = await request(app).get("/").query({ apiKey });
+    console.log(response);
     expect(response.status).toBe(200);
     expect(response.body).toHaveProperty("status", "success");
     expect(response.body).toHaveProperty("data");

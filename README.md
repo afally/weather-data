@@ -1,11 +1,13 @@
 # Project Title
 
-A simple news application
+My-news-app
 
 ## Description
 
-Frontend: ReactJS with Material UI
-Backend: Expressjs
+This is a MERN application that helps users to query archives containing historical news. The users can perform
+Frontend: ReactJS with Material UI using Typescript
+Backend: RestAPI & Expressjs using Typescript
+Testing:
 
 ## Getting Started
 
