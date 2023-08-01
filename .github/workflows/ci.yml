@@ -61,4 +61,6 @@ jobs:
       - name: Run Tests (Backend)
         run: npm test
         working-directory: packages/express-backend
-        continue-on-error: false
+
+      - name: Job complete
+        run: echo "Job complete"
