@@ -87,7 +87,7 @@ export const Articles: React.FC = () => {
             new Date(b.publishedAt).getTime() -
             new Date(a.publishedAt).getTime()
         );
-      } else {
+      } else if (orderBy === "date-asc") {
         filteredList.sort(
           (a, b) =>
             new Date(a.publishedAt).getTime() -
