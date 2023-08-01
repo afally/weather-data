@@ -61,7 +61,7 @@ git clone https://github.com/ayofalo/my-news-app.git
 2. Navigate to the project directory
 
 ```bash
-cd your-project
+cd my-news-app
 ```
 
 3. Install the project dependencies using NPM(Node Package Manager):
