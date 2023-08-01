@@ -19,7 +19,7 @@ jobs:
       - name: Run Super-Linter
         uses: github/super-linter@v3.13.5
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.THE_NEWS }}
 
   test:
     name: Run Tests
