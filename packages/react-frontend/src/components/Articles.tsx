@@ -11,7 +11,6 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import AutocompleteForm from "./AutocompleteForm";
 import StartDate from "./StartDate";
-import EndDate from "./EndDate";
 import ArticleCard from "./ArticleCard";
 
 export const Articles: React.FC = () => {
@@ -144,7 +143,6 @@ export const Articles: React.FC = () => {
                   value={orderBy}
                   onChange={(e) => setOrderBy(e.target.value as string)}
                   label="Order By"
-                  id="order-by-select"
                 >
                   <MenuItem value="">Select an option</MenuItem>
                   <MenuItem value="date">Date (Descending)</MenuItem>
@@ -160,9 +158,7 @@ export const Articles: React.FC = () => {
                 onEndDateSelect={handleEndDateSelect}
               />
             </Grid>
-            {/* <Grid item xs={12} md={2} gap={2}>
-              <EndDate value={toDate} onDateSelect={handleEndDateSelect} />
-            </Grid> */}
+
             <Grid item xs={12} md={3} style={{ flexWrap: "nowrap" }}>
               <Box textAlign="center" display={"flex"} gap={2}>
                 <Button type="submit" variant="contained" color="primary">
