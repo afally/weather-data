@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import winston from "winston";
-import apiKeyValidation from "./utils/apiKeyValidation";
+import apiKeyValidation from "./middleware/apiKeyValidation";
 
 import { Request, Response, NextFunction } from "express";
 import articlesRouter from "./api/routes/articles/articles.router";

@@ -50,7 +50,7 @@ const server = setupServer(
 
     // Now you can use the "apiKey" value to perform actions in the response resolver function
     // For example, you can check if the apiKey is valid or not and proceed accordingly.
-    if (apiKey === "5aa965eb8e501bff4bde01b13de411e5") {
+    if (apiKey === process.env.VALID_API_KEY) {
       return res(ctx.json({ data: mockArticles }));
     } else {
       // Handle invalid apiKey case

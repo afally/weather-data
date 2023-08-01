@@ -129,10 +129,8 @@ export const Articles: React.FC = () => {
               <AutocompleteForm
                 data={data}
                 loading={loading}
-                error={error}
                 onOptionSelect={handleOptionSelect}
                 value={selectedOption}
-                onClear={handleClearFilter}
               />
             </Grid>
 

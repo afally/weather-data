@@ -3,7 +3,7 @@ import { Request, Response } from "express";
 
 const getArticles = async (req: Request, res: Response): Promise<void> => {
   try {
-    if (!articleOptions) {
+    if (!articleOptions.length) {
       res.status(404).json({
         status: "error",
         totalResults: 0,

@@ -10,19 +10,16 @@ import { ArticleType } from "../types";
 interface AutocompleteFormProps {
   data: ArticleType[];
   loading: boolean;
-  error: string;
+
   onOptionSelect: (option?: ArticleType) => void;
   value: ArticleType | undefined;
-  onClear: () => void;
 }
 
 const AutocompleteForm: React.FC<AutocompleteFormProps> = ({
   data,
   loading,
-  error,
   onOptionSelect,
   value,
-  onClear,
 }) => {
   const [open, setOpen] = React.useState(false);
   const [options, setOptions] = React.useState<string[]>([]);
