@@ -19,8 +19,7 @@ jobs:
       - name: Run Super-Linter
         uses: github/super-linter@v5
         with:
-          validate_all_codebase: false
-          default_branch: master
+          entryPoint: .
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

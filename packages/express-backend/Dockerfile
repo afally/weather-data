@@ -15,5 +15,5 @@ COPY . .
 COPY .env .env
 
 # Expose the port specified in .env (3001 in this case)
-EXPOSE $PORT
+EXPOSE 3000
 ENTRYPOINT ["npm", "start"]
