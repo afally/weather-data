@@ -2,6 +2,8 @@ import * as React from "react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import CircularProgress from "@mui/material/CircularProgress";
+import { Icon, IconButton } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 
 import { ArticleType } from "../types";
 
@@ -9,7 +11,7 @@ interface AutocompleteFormProps {
   data: ArticleType[];
   loading: boolean;
   error: string;
-  onOptionSelect: (option: ArticleType) => void;
+  onOptionSelect: (option?: ArticleType) => void;
   value: ArticleType | undefined;
   onClear: () => void;
 }
@@ -24,20 +26,27 @@ const AutocompleteForm: React.FC<AutocompleteFormProps> = ({
 }) => {
   const [open, setOpen] = React.useState(false);
   const [options, setOptions] = React.useState<string[]>([]);
-  const [title, setTitle] = React.useState<string>();
+  const [title, setTitle] = React.useState<string>(value?.title ?? "");
   const optionsArray = data;
+
+  const handleClearInput = () => {
+    setTitle("");
+    onOptionSelect(undefined);
+  };
 
   React.useEffect(() => {
     if (loading === true) {
       return undefined;
     }
     setOptions(optionsArray.map((article) => article.title));
-  }, [loading, data, optionsArray]);
+
+    if (!value?.title) handleClearInput();
+  }, [loading, data, optionsArray, value?.title]);
 
   return (
     <Autocomplete
       id="asynchronous-demo"
-      sx={{ width: 350 }}
+      sx={{ width: "100%" }}
       open={open}
       onOpen={() => {
         setOpen(true);
@@ -49,6 +58,7 @@ const AutocompleteForm: React.FC<AutocompleteFormProps> = ({
       options={options}
       loading={loading}
       clearOnBlur={false}
+      value={title}
       renderInput={(params) => (
         <TextField
           {...params}
@@ -60,22 +70,26 @@ const AutocompleteForm: React.FC<AutocompleteFormProps> = ({
                 {loading ? (
                   <CircularProgress color="inherit" size={20} />
                 ) : null}
-                {params.InputProps.endAdornment}
+
+                {title && (
+                  <IconButton edge="end" onClick={handleClearInput}>
+                    <CloseIcon />
+                  </IconButton>
+                )}
               </React.Fragment>
             ),
           }}
+          // value={title || ""}
         />
       )}
-      value={title}
       onChange={(event, value) => {
         // Find the selected article by its title
-        if (value) {
-          setTitle(value);
-        }
+
+        setTitle(value ?? "");
+
         const selectedArticle = data.find((article) => article.title === value);
-        if (selectedArticle) {
-          onOptionSelect(selectedArticle);
-        }
+
+        onOptionSelect(selectedArticle ?? undefined);
       }}
     />
   );

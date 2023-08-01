@@ -15,19 +15,9 @@ const app = express();
 // Setup Swagger
 setupSwagger(app);
 
-//Authorization
-//const validAPIKey = process.env.VALID_API_KEY;
-
-//console.log(validAPIKey);
-// Middleware
 app.use(cors()); // Allowing all origins by default.
 app.use(express.json()); // Parses incoming JSON requests.
-// Use the apiKeyValidation middleware before article routes that need API key validation
-// app.use(apiKeyValidation);
 
-// Mounted the articlesRouter to handle requests to the root URL ("/").
-//It was specified in the task to only have one route
-// app.use("/", articlesRouter);
 app.use("/", apiKeyValidation, articlesRouter);
 // Logger configuration
 const logger = winston.createLogger({

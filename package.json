@@ -2,7 +2,7 @@
   "name": "my-news-app",
   "private": true,
   "workspaces": [
-    "packages/"
+    "packages/*"
   ],
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
@@ -20,10 +20,10 @@
     "msw": "^1.2.1"
   },
   "scripts": {
-    "run:fe": "lerna run --scope=my-news-app/packages/react-frontend  start",
-    "run:be": "lerna run --scope=my-news-app/packages/express-backend start",
-    "start:both": "npm run run:fe & npm run run:be",
-    "test": "lerna run test --scope=@my-news-app/packages/react-frontend"
+    "run:fe": "lerna run --scope=react-frontend  start",
+    "run:be": "lerna run --scope=express-backend start",
+    "start:both": "concurrently \"npm run run:be\" \"npm run run:fe\"",
+    "test": "lerna run test --scope=react-frontend"
   },
   "dependencies": {
     "concurrently": "^8.2.0",

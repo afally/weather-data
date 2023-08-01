@@ -15,14 +15,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const supertest_1 = __importDefault(require("supertest"));
 const server_1 = __importDefault(require("../../../server")); // Update the path if needed
 describe("Get Articles Controller", () => {
-    let server;
-    const PORT = 3003;
-    beforeAll((done) => {
-        server = server_1.default.listen(PORT, () => {
-            console.log(`Test server started on port ${PORT}...`);
-            done();
-        });
-    });
+    //let server: any;
+    //const PORT = 3001;
+    // beforeAll((done) => {
+    //   server = app.listen(PORT, () => {
+    //     console.log(`Test server started on port ${PORT}...`);
+    //     done();
+    //   });
+    // });
     it("should return 200 and list of articles", () => __awaiter(void 0, void 0, void 0, function* () {
         const apiKey = "5aa965eb8e501bff4bde01b13de411e5"; // Replace with your valid API key
         const response = yield (0, supertest_1.default)(server_1.default).get("/").query({ apiKey });
@@ -47,9 +47,9 @@ describe("Get Articles Controller", () => {
         expect(response.status).toBe(200);
         // Add more assertions here if needed
     }));
-    afterAll(() => __awaiter(void 0, void 0, void 0, function* () {
-        // Closing the server
-        yield server.close();
-        console.log(`Test server closed...`);
-    }), 10000); // Set the timeout to 10000 milliseconds (10 seconds)
+    // afterAll(async () => {
+    //   // Closing the server
+    //   await server.close();
+    //   console.log(`Test server closed...`);
+    // }, 10000); // Set the timeout to 10000 milliseconds (10 seconds)
 });

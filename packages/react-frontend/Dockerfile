@@ -12,6 +12,8 @@ RUN npm install
 #Bundle app source
 COPY . .
 
-RUN ls -a
-EXPOSE 3001
-ENTRYPOINT ["npm", "start"]
+# Build the application
+RUN npm run build
+
+EXPOSE 3000
+CMD ["npm", "start"]

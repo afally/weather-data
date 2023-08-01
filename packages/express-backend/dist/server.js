@@ -14,17 +14,8 @@ dotenv_1.default.config();
 const app = (0, express_1.default)();
 // Setup Swagger
 (0, swagger_1.default)(app);
-//Authorization
-//const validAPIKey = process.env.VALID_API_KEY;
-//console.log(validAPIKey);
-// Middleware
 app.use((0, cors_1.default)()); // Allowing all origins by default.
 app.use(express_1.default.json()); // Parses incoming JSON requests.
-// Use the apiKeyValidation middleware before article routes that need API key validation
-// app.use(apiKeyValidation);
-// Mounted the articlesRouter to handle requests to the root URL ("/").
-//It was specified in the task to only have one route
-// app.use("/", articlesRouter);
 app.use("/", apiKeyValidation_1.default, articles_router_1.default);
 // Logger configuration
 const logger = winston_1.default.createLogger({

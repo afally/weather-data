@@ -19,7 +19,9 @@ export const Articles: React.FC = () => {
   const [fromDate, setFromDate] = useState<Date | null>(null);
   const [toDate, setToDate] = useState<Date | null>(null);
   const [orderBy, setOrderBy] = useState<string>("");
-  const [selectedOption, setSelectedOption] = useState<ArticleType>();
+  const [selectedOption, setSelectedOption] = useState<ArticleType | undefined>(
+    undefined
+  );
   const [selectedOptions, setSelectedOptions] = useState<Set<ArticleType>>(
     new Set()
   );
@@ -31,7 +33,7 @@ export const Articles: React.FC = () => {
     }
   }, [data]);
 
-  const handleOptionSelect = (option: ArticleType) => {
+  const handleOptionSelect = (option?: ArticleType) => {
     setSelectedOption(option);
   };
   const handleStartDateSelect = (date: Date | null) => {
@@ -120,10 +122,10 @@ export const Articles: React.FC = () => {
             style={{
               display: "flex",
               alignItems: "center",
-              justifyContent: "space-between",
+              // justifyContent: "space-between",
             }}
           >
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={2}>
               <AutocompleteForm
                 data={data}
                 loading={loading}
@@ -152,26 +154,28 @@ export const Articles: React.FC = () => {
                 </Select>
               </FormControl>
             </Grid>
-            <Grid item xs={12} md={2}>
+            <Grid item xs={12} md={2} gap={2}>
               <StartDate
                 value={fromDate}
                 onDateSelect={handleStartDateSelect}
               />
             </Grid>
-            <Grid item xs={12} md={2}>
+            <Grid item xs={12} md={2} gap={2}>
               <EndDate value={toDate} onDateSelect={handleEndDateSelect} />
             </Grid>
-            <Grid item xs={12} md={2}>
-              <Box textAlign="center">
+            <Grid item xs={12} md={3} style={{ flexWrap: "nowrap" }}>
+              <Box textAlign="center" display={"flex"} gap={2}>
                 <Button type="submit" variant="contained" color="primary">
                   Search
                 </Button>
-              </Box>
-              <Box textAlign="center" mt={2}>
+
                 <Button variant="contained" onClick={handleClearFilter}>
                   Clear Filter
                 </Button>
               </Box>
+              {/* <Box textAlign="center" mt={2}>
+               
+              </Box> */}
             </Grid>
           </Grid>
         </form>
