@@ -21,8 +21,6 @@ jobs:
         with:
           validate_all_codebase: false
           default_branch: master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   test:
     name: Run Tests
