@@ -3,11 +3,14 @@
     "target": "es6",
     "module": "commonjs",
     "outDir": "./dist",
-    "rootDir": "../express-backend",
+    "rootDir": ".", // Update the path accordingly
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true
   },
-  "include": ["../express-backend"],
-  "exclude": ["node_modules", "../express-backend/node_modules/@types/mongodb"]
+  "include": ["."], // Update the path accordingly
+  "exclude": [
+    "node_modules",
+    "./packages/express-backend/node_modules/@types/mongodb"
+  ] // Update the path accordingly
 }
