@@ -152,15 +152,17 @@ export const Articles: React.FC = () => {
                 </Select>
               </FormControl>
             </Grid>
-            <Grid item xs={12} md={2} gap={2}>
+            <Grid item xs={12} md={4} gap={2}>
               <StartDate
-                value={fromDate}
-                onDateSelect={handleStartDateSelect}
+                start={fromDate}
+                end={toDate}
+                onStartDateSelect={handleStartDateSelect}
+                onEndDateSelect={handleEndDateSelect}
               />
             </Grid>
-            <Grid item xs={12} md={2} gap={2}>
+            {/* <Grid item xs={12} md={2} gap={2}>
               <EndDate value={toDate} onDateSelect={handleEndDateSelect} />
-            </Grid>
+            </Grid> */}
             <Grid item xs={12} md={3} style={{ flexWrap: "nowrap" }}>
               <Box textAlign="center" display={"flex"} gap={2}>
                 <Button type="submit" variant="contained" color="primary">

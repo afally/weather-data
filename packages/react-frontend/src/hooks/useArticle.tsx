@@ -11,7 +11,7 @@ function useArticle() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/?apiKey=${process.env.VALID_API_KEY}`
+          `http://localhost:3001/?apiKey=5aa965eb8e501bff4bde01b13de411e5`
         );
         setData(response.data.data);
         //console.log(response.data.data);

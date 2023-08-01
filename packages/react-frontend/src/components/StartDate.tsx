@@ -3,22 +3,41 @@ import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import { makeStyles } from "@mui/material/styles";
 
 interface StartDateProps {
-  value: Date | null;
-  onDateSelect: (date: Date | null) => void;
+  start: Date | null;
+  end: Date | null;
+  onStartDateSelect: (date: Date | null) => void;
+  onEndDateSelect: (date: Date | null) => void;
 }
 
-function StartDate({ value, onDateSelect }: StartDateProps) {
-  const handleChange = (date: Date | null) => {
-    onDateSelect(date);
+function StartDate({
+  start,
+  end,
+  onStartDateSelect,
+  onEndDateSelect,
+}: StartDateProps) {
+  const handleStartChange = (date: Date | null) => {
+    onStartDateSelect(date);
+  };
+
+  const handleEndChange = (date: Date | null) => {
+    onEndDateSelect(date);
   };
   return (
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DemoContainer components={["DatePicker"]}>
-        <DatePicker label="Start date" value={value} onChange={handleChange} />
-      </DemoContainer>
-    </LocalizationProvider>
+    <div style={{ marginBottom: "1.5%" }}>
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <DemoContainer components={["DatePicker"]}>
+          <DatePicker
+            label="Start date"
+            value={start}
+            onChange={handleStartChange}
+          />
+          <DatePicker label="End date" value={end} onChange={handleEndChange} />
+        </DemoContainer>
+      </LocalizationProvider>
+    </div>
   );
 }
 
