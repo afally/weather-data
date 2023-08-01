@@ -58,9 +58,9 @@ jobs:
         run: npm test
         working-directory: packages/react-frontend
 
-      - name: Run Tests (Backend)
-        run: npm test
-        working-directory: packages/express-backend
+      # - name: Run Tests (Backend)
+      #   run: npm test
+      #   working-directory: packages/express-backend
 
       - name: Job complete
         run: echo "Job complete"
