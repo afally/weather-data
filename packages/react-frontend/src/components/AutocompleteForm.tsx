@@ -59,7 +59,7 @@ const AutocompleteForm: React.FC<AutocompleteFormProps> = ({
       options={options}
       loading={loading}
       clearOnBlur={false}
-      value={title}
+      value={title ?? ""}
       renderInput={(params) => (
         <TextField
           {...params}

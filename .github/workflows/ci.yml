@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - master
+env:
+  PORT: "3001"
+  VALID_API_KEY: "5aa965eb8e501bff4bde01b13de411e5"
 
 jobs:
   super-lint:

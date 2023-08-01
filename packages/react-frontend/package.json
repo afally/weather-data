@@ -34,7 +34,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!axios)/\" --verbose",
+    "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!axios)/\" --verbose --silent",
     "eject": "react-scripts eject",
     "lint": "eslint \"src/**/*.ts\" \"src/**/*.tsx\""
   },
