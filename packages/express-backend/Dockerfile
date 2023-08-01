@@ -12,6 +12,8 @@ RUN npm install
 #Bundle app source
 COPY . .
 
-RUN ls -a
-EXPOSE 3001
+COPY .env .env
+
+# Expose the port specified in .env (3001 in this case)
+EXPOSE $PORT
 ENTRYPOINT ["npm", "start"]
