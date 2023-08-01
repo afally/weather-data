@@ -105,7 +105,10 @@ describe("Articles Component", () => {
     await waitForLoadingToComplete();
 
     // Fill in the search form
-    const searchInput = screen.getByLabelText("Title");
+    const searchInput = screen.getByTestId("auto-complete");
+
+    console.log("searchInput", searchInput);
+
     fireEvent.change(searchInput, { target: { value: "Article 1" } });
 
     // Submit the form

@@ -45,7 +45,8 @@ const AutocompleteForm: React.FC<AutocompleteFormProps> = ({
 
   return (
     <Autocomplete
-      id="asynchronous-demo"
+      id="auto-complete"
+      data-testId="auto-complete"
       sx={{ width: "100%" }}
       open={open}
       onOpen={() => {
