@@ -2,7 +2,7 @@ import * as React from "react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import CircularProgress from "@mui/material/CircularProgress";
-import { Icon, IconButton } from "@mui/material";
+import { IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
 import { ArticleType } from "../types";
@@ -29,10 +29,10 @@ const AutocompleteForm: React.FC<AutocompleteFormProps> = ({
   const [title, setTitle] = React.useState<string>(value?.title ?? "");
   const optionsArray = data;
 
-  const handleClearInput = () => {
+  const handleClearInput = React.useCallback(() => {
     setTitle("");
     onOptionSelect(undefined);
-  };
+  }, [onOptionSelect]);
 
   React.useEffect(() => {
     if (loading === true) {
@@ -41,7 +41,7 @@ const AutocompleteForm: React.FC<AutocompleteFormProps> = ({
     setOptions(optionsArray.map((article) => article.title));
 
     if (!value?.title) handleClearInput();
-  }, [loading, data, optionsArray, value?.title]);
+  }, [loading, data, optionsArray, value?.title, handleClearInput]);
 
   return (
     <Autocomplete
