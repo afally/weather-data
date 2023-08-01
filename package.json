@@ -22,8 +22,7 @@
   "scripts": {
     "run:fe": "lerna run --scope=react-frontend  start",
     "run:be": "lerna run --scope=express-backend start",
-    "start:both": "concurrently \"npm run run:be\" \"npm run run:fe\"",
-    "test": "lerna run test --scope=react-frontend"
+    "start:both": "concurrently \"npm run run:be\" \"npm run run:fe\""
   },
   "dependencies": {
     "concurrently": "^8.2.0",
