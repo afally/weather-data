@@ -23,13 +23,13 @@ This is a web application that helps users to query archives containing historic
 
 Technologies used
 
-Frontend: ReactJS with Material UI using Typescript
-Backend: NodeJS & RestAPI & Expressjs & using Typescript
-API documentation: Swagger UI
-Unit Testing: Jest, React testing library, Supertest & MSW
-Monorepo management: Lerna was used
-CI/CD - Github Actions
-Containerization - Docker
+- Frontend: ReactJS with Material UI using Typescript
+- Backend: NodeJS & RestAPI & Expressjs & using Typescript
+- REST API documentation: Swagger UI
+- Testing: Jest, React testing library, Supertest & MSW
+- Monorepo management: Lerna was used
+- CI/CD - Github Actions
+- Containerization - Docker
 
 ## Features
 
@@ -159,12 +159,12 @@ http://localhost:3001/api-docs/#/default/get_api_articles
 
 ### Usage
 
-Accessing the homepage: Open your web browser and navigate to http://localhost:3000 to view the homepage.
+- Accessing the homepage: Open your web browser and navigate to http://localhost:3000 to view the homepage.
 
-Using the API: Refer to the Swagger API documentation at http://localhost:3001/api-docs for a detailed list of available endpoints and how to interact with them.
+- Using the API: Refer to the Swagger API documentation at http://localhost:3001/api-docs for a detailed list of available endpoints and how to interact with them.
 
-Troubleshooting
-If you encounter any issues or have questions, please feel free to reach out to us by creating an issue on our GitHub repository: https://github.com/ayofalo/my-news-app/issues.
+- Troubleshooting
+  If you encounter any issues or have questions, please feel free to reach out to us by creating an issue on our GitHub repository: https://github.com/ayofalo/my-news-app/issues.
 
 ### License
 

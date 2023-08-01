@@ -12,5 +12,5 @@
   "exclude": [
     "node_modules",
     "./packages/express-backend/node_modules/@types/mongodb"
-  ] // Update the path accordingly
+  ]
 }
