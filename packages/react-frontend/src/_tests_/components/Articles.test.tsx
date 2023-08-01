@@ -100,22 +100,22 @@ describe("Articles Component", () => {
     });
   });
 
-  // test("filters articles when the search form is submitted", async () => {
-  //   render(<Articles />);
-  //   await waitForLoadingToComplete();
+  test("filters articles when the search form is submitted", async () => {
+    render(<Articles />);
+    await waitForLoadingToComplete();
 
-  //   // Fill in the search form
-  //   const searchInput = screen.getByLabelText("Title");
-  //   fireEvent.change(searchInput, { target: { value: "Article 1" } });
+    // Fill in the search form
+    const searchInput = screen.getByLabelText("Title");
+    fireEvent.change(searchInput, { target: { value: "Article 1" } });
 
-  //   // Submit the form
-  //   const submitButton = screen.getByText("Search");
-  //   fireEvent.click(submitButton);
+    // Submit the form
+    const submitButton = screen.getByText("Search");
+    fireEvent.click(submitButton);
 
-  //   // Expect only the first article to be rendered after filtering
-  //   expect(screen.getByText("Article 1")).toBeInTheDocument();
-  //   expect(screen.queryByText("Article 2")).not.toBeInTheDocument();
-  // });
+    // Expect only the first article to be rendered after filtering
+    expect(screen.getByText("Article 1")).toBeInTheDocument();
+    expect(screen.queryByText("Article 2")).not.toBeInTheDocument();
+  });
 
   test("clears the search form when 'Clear Filter' button is clicked", async () => {
     render(<Articles />);

@@ -26,7 +26,7 @@ const AutocompleteForm: React.FC<AutocompleteFormProps> = ({
 }) => {
   const [open, setOpen] = React.useState(false);
   const [options, setOptions] = React.useState<string[]>([]);
-  const [title, setTitle] = React.useState<string>(value?.title ?? "");
+  const [title, setTitle] = React.useState<string | undefined>(value?.title);
   const optionsArray = data;
 
   const handleClearInput = React.useCallback(() => {
@@ -79,6 +79,7 @@ const AutocompleteForm: React.FC<AutocompleteFormProps> = ({
               </React.Fragment>
             ),
           }}
+
           // value={title || ""}
         />
       )}
