@@ -102,6 +102,25 @@ cd express-backend
 npm run test
 press a to run all tests
 
+## To run the docker application
+
+navigate to the root directory
+
+cd my-news-app
+
+```
+
+docker-compose up
+
+```
+
+To stop the containers
+
+```
+
+docker-compose stop
+
+```
 
 ##API documentation
 
@@ -121,72 +140,11 @@ Using the API: Refer to the Swagger API documentation at http://localhost:3001/a
 Troubleshooting
 If you encounter any issues or have questions, please feel free to reach out to us by creating an issue on our GitHub repository: https://github.com/ayofalo/my-news-app/issues.
 
-## To run the docker application
-
-navigate to the root directory
-
-cd my-news-app
-
-```
-
-docker-compose build
-
-```
-
-```
-
-docker-compose up
-
-```
-
-To stop the containers
-
-```
-
-docker-compose stop
-
-```
 
 ## License
 
 This project is licensed under the MIT License.
 
-### Dependencies
-
-Contained in package.json file within the root directory
-
-Built With
-
-#### React
-
-#### Node
-
-#### Express
-
-### Installing and
-
-#### Clone the repo
-
-#### Install NPM packages
-
-#### npm install
-
-### Executing program
-
-Input Mongo_URI as an environment variable.
-
-Run the command below in the terminal to run the application (frontend and backend application simultaneously)
-
-````
-
-lerna run --parallel start
-
-```
-
-
-## Postman Collection
-
-Find the postman collection in the documentation folder in the backend directory
 
 ## Authors
 
@@ -194,3 +152,4 @@ Contributors names and contact info
 
 Ayo Folami
 ```
+````
