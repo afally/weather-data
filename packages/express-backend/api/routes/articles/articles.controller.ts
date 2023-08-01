@@ -1,6 +1,8 @@
 import { ArticleTypes, articleOptions } from "../../models/articles.model";
 import { Request, Response } from "express";
 
+//Controller getArticles
+
 const getArticles = async (req: Request, res: Response): Promise<void> => {
   try {
     if (!articleOptions.length) {

@@ -31,6 +31,8 @@ const mockArticles = [
     url: "url2",
   },
 ];
+
+//function for waitForLoadingToComplete
 const waitForLoadingToComplete = async () => {
   await waitFor(() => {
     const loadingElement = screen.getByText("Loading...");
@@ -48,8 +50,6 @@ const server = setupServer(
     // Access query parameters using "req.url.searchParams"
     const apiKey = req.url.searchParams.get("apiKey");
 
-    // Now you can use the "apiKey" value to perform actions in the response resolver function
-    // For example, you can check if the apiKey is valid or not and proceed accordingly.
     if (apiKey === process.env.VALID_API_KEY) {
       return res(ctx.json({ data: mockArticles }));
     } else {
@@ -130,8 +130,8 @@ describe("Articles Component", () => {
     fireEvent.click(searchButton);
 
     // Articles filtered based on the start date should be displayed
-    expect(screen.getByText(/Article 1/i)).toBeInTheDocument(); // Using a regular expression with "i" flag for case-insensitive matching
-    expect(screen.getByText(/Article 2/i)).toBeInTheDocument(); // Using a regular expression with "i" flag for case-insensitive matching
+    expect(screen.getByText(/Article 1/i)).toBeInTheDocument(); // Used a regular expression with "i" flag for case-insensitive matching
+    expect(screen.getByText(/Article 2/i)).toBeInTheDocument();
   });
 
   test("filters articles by end date", async () => {
@@ -151,8 +151,6 @@ describe("Articles Component", () => {
   test("orders articles by date in descending order", async () => {
     render(<Articles />);
     await waitForLoadingToComplete();
-
-    // Log the rendered HTML content again for further debugging
 
     const orderBySelect = screen.getByLabelText("Order By");
     fireEvent.mouseDown(orderBySelect);

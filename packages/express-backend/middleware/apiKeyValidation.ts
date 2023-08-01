@@ -4,7 +4,7 @@ import { Request, Response, NextFunction } from "express";
 import dotenv from "dotenv";
 dotenv.config();
 
-// Replace 'VALID_API_KEY' with the actual valid API key you generated and stored securely
+//apiKeyValidation
 const validAPIKey = process.env.VALID_API_KEY;
 
 const apiKeyValidation = (req: Request, res: Response, next: NextFunction) => {

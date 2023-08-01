@@ -6,7 +6,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
-// Replace 'VALID_API_KEY' with the actual valid API key you generated and stored securely
+//apiKeyValidation
 const validAPIKey = process.env.VALID_API_KEY;
 const apiKeyValidation = (req, res, next) => {
     const apiKey = req.query.apiKey;

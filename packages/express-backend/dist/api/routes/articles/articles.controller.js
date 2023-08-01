@@ -10,6 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const articles_model_1 = require("../../models/articles.model");
+//Controller getArticles
 const getArticles = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         if (!articles_model_1.articleOptions.length) {

@@ -30,6 +30,6 @@ const articles_controller_1 = __importDefault(require("./articles.controller"));
  *                 $ref: '#/components/schemas/Article'
  */
 const articlesRouter = express_1.default.Router();
-// api/questions
+//articlesrouter
 articlesRouter.get("/", articles_controller_1.default);
 exports.default = articlesRouter;

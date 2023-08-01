@@ -81,17 +81,13 @@ export const Articles: React.FC = () => {
       );
     }
     if (orderBy === "date" || "date-asc") {
-      console.log("touched");
       if (orderBy === "date") {
-        console.log("descend");
         filteredList.sort(
           (a, b) =>
             new Date(b.publishedAt).getTime() -
             new Date(a.publishedAt).getTime()
         );
       } else {
-        console.log("Sorting in ascending order");
-        console.log("ascend");
         filteredList.sort(
           (a, b) =>
             new Date(a.publishedAt).getTime() -
@@ -144,7 +140,6 @@ export const Articles: React.FC = () => {
                   onChange={(e) => setOrderBy(e.target.value as string)}
                   label="Order By"
                 >
-                  <MenuItem value="">Select an option</MenuItem>
                   <MenuItem value="date">Date (Descending)</MenuItem>
                   <MenuItem value="date-asc">Date (Ascending)</MenuItem>
                 </Select>

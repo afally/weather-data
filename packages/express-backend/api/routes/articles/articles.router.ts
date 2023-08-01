@@ -26,7 +26,7 @@ import getArticles from "./articles.controller";
  */
 const articlesRouter: Router = express.Router();
 
-// api/questions
+//articlesrouter
 articlesRouter.get("/", getArticles);
 
 export default articlesRouter;
