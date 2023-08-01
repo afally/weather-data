@@ -18,8 +18,6 @@ jobs:
 
       - name: Run Super-Linter
         uses: github/super-linter@v5
-        with:
-          entryPoint: .
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
