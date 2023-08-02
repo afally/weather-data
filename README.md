@@ -28,7 +28,7 @@ Technologies used
 - REST API documentation: Swagger UI
 - Testing: Jest, React testing library, Supertest & MSW
 - Monorepo management: Lerna was used
-- CI/CD - Github Actions
+- CI - Github Actions
 - Containerization - Docker
 
 ## Features
