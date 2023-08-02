@@ -104,7 +104,7 @@ npm run start:both
 
 Once you have installed the dependencies, you can run test within the react-frontend and express-backend directory
 
-react-frontend
+- react-frontend
 
 ```bash
 cd packages
@@ -122,15 +122,12 @@ npm run test
 press a to run all tests
 ```
 
-```bash
-express-backend
-```
+- run test express-backend
 
 ```bash
 cd packages
 cd express-backend
 npm run test
-press a to run all tests
 ```
 
 ### Run docker
