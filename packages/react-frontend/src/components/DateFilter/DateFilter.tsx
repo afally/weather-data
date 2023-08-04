@@ -11,7 +11,7 @@ interface StartDateProps {
   onEndDateSelect: (date: Date | null) => void;
 }
 
-function StartDate({
+function DateFilter({
   start,
   end,
   onStartDateSelect,
@@ -40,4 +40,4 @@ function StartDate({
   );
 }
 
-export default StartDate;
+export default DateFilter;

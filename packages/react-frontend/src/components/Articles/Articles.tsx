@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { ArticleType } from "../types";
-import useArticle from "../hooks/useArticle";
+import { ArticleType } from "../../types";
+import useArticle from "../../hooks/useArticle";
 import "./Articles.css";
 import Button from "@mui/material/Button";
 import FormControl from "@mui/material/FormControl";
@@ -9,9 +9,9 @@ import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import AutocompleteForm from "./AutocompleteForm";
-import StartDate from "./StartDate";
-import ArticleCard from "./ArticleCard";
+import AutocompleteForm from "../AutocompleteForm/AutocompleteForm";
+import DateFilter from "../DateFilter/DateFilter";
+import ArticleCard from "../ArticleCard/ArticleCard";
 
 export const Articles: React.FC = () => {
   const { data, loading, error } = useArticle();
@@ -146,7 +146,7 @@ export const Articles: React.FC = () => {
               </FormControl>
             </Grid>
             <Grid item xs={12} md={4} gap={2}>
-              <StartDate
+              <DateFilter
                 start={fromDate}
                 end={toDate}
                 onStartDateSelect={handleStartDateSelect}

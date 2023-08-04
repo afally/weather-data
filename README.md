@@ -48,6 +48,15 @@ Before getting started, ensure that you have the following software installed on
 npm install -g typescript
 ```
 
+Before you start the application, you need to set up an environment variable to store your API key. Here's how you can do it:
+
+```bash
+PORT = 3001
+VALID_API_KEY="YOUR API KEY"
+```
+
+Create a file called `.env` in express-backend folder of the project with the environmental variables above. Replace "YOUR API KEY" with your key.
+
 ### Installation
 
 Step-by-step guide on how to install the project and its dependencies.

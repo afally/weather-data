@@ -5,7 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { ArticleType } from "../types";
+import { ArticleType } from "../../types";
 
 const ArticleCard: React.FC<ArticleType> = ({
   title,

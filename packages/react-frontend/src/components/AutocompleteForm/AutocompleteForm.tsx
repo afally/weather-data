@@ -5,7 +5,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
-import { ArticleType } from "../types";
+import { ArticleType } from "../../types";
 
 interface AutocompleteFormProps {
   data: ArticleType[];
@@ -43,7 +43,6 @@ const AutocompleteForm: React.FC<AutocompleteFormProps> = ({
   return (
     <Autocomplete
       id="auto-complete"
-      data-testId="auto-complete"
       sx={{ width: "100%" }}
       open={open}
       onOpen={() => {

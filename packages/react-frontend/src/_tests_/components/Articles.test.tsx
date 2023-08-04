@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-import Articles from "../../components/Articles";
+import Articles from "../../components/Articles/Articles";
 import { rest } from "msw";
 import { setupServer } from "msw/node";
 
