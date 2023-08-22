@@ -3,7 +3,6 @@ const request = require("supertest");
 const app = require("../../server");
 const {
   getDatabaseConnection,
-  sequelize,
 } = require("../../api/utils/getDatabaseConnection");
 
 describe("Authentication Routes", () => {
