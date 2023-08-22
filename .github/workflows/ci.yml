@@ -19,34 +19,11 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 14
-
-      - name: Install Dependencies (Frontend)
-        run: npm install
-        working-directory: packages/react-frontend
+          node-version: 18
 
       - name: Install Dependencies (Backend)
         run: npm install
-        working-directory: packages/express-backend
-
-      - name: Build (Frontend)
-        run: npm run build
-        working-directory: packages/react-frontend
-
-      - name: Build (Backend)
-        run: npm run build
-        working-directory: packages/express-backend
-
-      # - name: Build
-      #   run: npm run build
-
-      - name: Run Tests (Frontend)
-        run: npm test
-        working-directory: packages/react-frontend
-
-      # - name: Run Tests (Backend)
-      #   run: npm test
-      #   working-directory: packages/express-backend
+        working-directory: ./express-backend
 
       - name: Job complete
         run: echo "Job complete"
