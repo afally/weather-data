@@ -24,6 +24,10 @@ jobs:
       - name: Install Dependencies (Backend)
         run: npm install
         working-directory: ./express-backend
+
+      - name: Run Tests (Backend)
+        run: npm run test
+        working-directory: ./express-backend
         
       - name: Job complete
         run: echo "Job complete"
