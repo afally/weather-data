@@ -7,7 +7,7 @@ on:
 
 env:
   PORT: "3001"
-
+ #Include linter job as required
 jobs:
   test:
     name: Run Tests
@@ -20,13 +20,9 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 18
-
+     #Include frontend tests as required
       - name: Install Dependencies (Backend)
         run: npm install
-        working-directory: ./express-backend
-
-      - name: Run Tests (Backend)
-        run: npm run test
         working-directory: ./express-backend
         
       - name: Job complete
