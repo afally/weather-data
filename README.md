@@ -54,7 +54,7 @@ Before getting started, ensure that you have the following software installed on
 
 - Node.js: Download and install Node.js from the official website: https://nodejs.org
 
-Before you start the application, you need to set up an environment variable to store your API key. Here's how you can do it:
+Before you start the application, you need to set up an environment variables. Here's how you can do it:
 
 ```bash
 PORT=3001
